@@ -17,9 +17,9 @@ from setuptools import setup
 # Figure out if the system already has a supported Crypto library
 rsa_signer_library = 'cryptography'
 try:
-  import rsa
+    import rsa
 
-  rsa_signer_library = 'rsa'
+    rsa_signer_library = 'rsa'
 except ImportError:
     try:
         from Crypto.Hash import SHA256
@@ -30,18 +30,17 @@ except ImportError:
     except ImportError:
         pass
 
-
 setup(
-    name = 'adb',
-    packages = ['adb'],
-    version = '1.3.0',
-    author = 'Fahrzin Hemmati',
-    author_email = 'fahhem@gmail.com',
-    maintainer = 'Fahrzin Hemmati',
-    maintainer_email = 'fahhem@google.com',
-    url = 'https://github.com/google/python-adb',
-    description = 'A pure python implementation of the Android ADB and Fastboot protocols',
-    long_description = '''
+    name='adb',
+    packages=['adb'],
+    version='1.3.0.1',
+    author='Fahrzin Hemmati',
+    author_email='fahhem@gmail.com',
+    maintainer='Nicholas Chen',
+    maintainer_email='nic562@gmail.com',
+    url='https://github.com/nic562/python-adb',
+    description='A pure python implementation of the Android ADB and Fastboot protocols',
+    long_description='''
 This repository contains a pure-python implementation of the Android
 ADB and Fastboot protocols, using libusb1 for USB communications.
 
@@ -58,19 +57,19 @@ communicates with a device that it wasn't intended to, unlike the
 Android project's ADB.
 ''',
 
-    keywords = ['android', 'adb', 'fastboot'],
+    keywords=['android', 'adb', 'fastboot'],
 
-    install_requires = [
+    install_requires=[
         'libusb1>=1.0.16',
         rsa_signer_library
     ],
 
-    extra_requires = {
+    extra_requires={
         'fastboot': 'progressbar>=2.3'
     },
 
-## classifier list https://pypi.python.org/pypi?:action=list_classifiers
-    classifiers = [
+    ## classifier list https://pypi.python.org/pypi?:action=list_classifiers
+    classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',

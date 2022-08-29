@@ -112,6 +112,9 @@ for i in xrange(10):
 
 #### 1.3.0
 
+#### 1.3.0.1
+ * Build a tag for the recent commits
+
 ##### Backwards Incompatible changes
 `adb_commands.AdbCommands()` is now a normal class rather than a collection of staticmethods. Using the following example code to get started:
 ```py
